@@ -1,37 +1,42 @@
+"""The library is used to generate a random number."""
 from random import randint
 
 
 def attack(char_name, char_class):
+    """This Function."""
     string_damage = 'нанёс урон противнику равный'
     if char_class == 'warrior':
-        return (f'{char_name} {string_damage} {5 + randint(3, 5)}')
+        return f'{char_name} {string_damage} {5 + randint(3, 5)}'
     if char_class == 'mage':
-        return (f'{char_name} {string_damage} {5 + randint(5, 10)}')
+        return f'{char_name} {string_damage} {5 + randint(5, 10)}'
     if char_class == 'healer':
-        return (f'{char_name} {string_damage} {5 + randint(-3, -1)}')
+        return f'{char_name} {string_damage} {5 + randint(-3, -1)}'
 
 
 def defence(char_name, char_class):
+    """This Function."""
     if char_class == 'warrior':
-        return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
+        return f'{char_name} блокировал {10 + randint(5, 10)} урона'
     if char_class == 'mage':
-        return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
+        return f'{char_name} блокировал {10 + randint(-2, 2)} урона'
     if char_class == 'healer':
-        return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
+        return f'{char_name} блокировал {10 + randint(2, 5)} урона'
 
 
 def special(char_name, char_class):
+    """This Function."""
     string_special = 'применил специальное умение'
     if char_class == 'warrior':
-        return (f'{char_name} {string_special} {80 + 25}»')
+        return f'{char_name} {string_special} {80 + 25}»'
     if char_class == 'mage':
-        return (f'{char_name} {string_special} «Атака {5 + 40}»')
+        return f'{char_name} {string_special} «Атака {5 + 40}»'
     if char_class == 'healer':
-        return (f'{char_name} {string_special} «Защита {10 + 30}»')
-    return (f'{char_name} не {string_special}')
+        return f'{char_name} {string_special} «Защита {10 + 30}»'
+    return f'{char_name} не {string_special}'
 
 
 def start_training(char_name, char_class, attack, defence, special):
+    """This Function."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -57,6 +62,7 @@ def start_training(char_name, char_class, attack, defence, special):
 
 
 def choice_char_class():
+    """This Function."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
@@ -81,6 +87,7 @@ def choice_char_class():
 
 
 def main():
+    """This Function printing greetings."""
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name = input('...назови себя: ')
